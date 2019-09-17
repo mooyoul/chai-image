@@ -1,6 +1,8 @@
 # chai-image
 
 ![Build Status](https://github.com/mooyoul/chai-image/workflows/workflow/badge.svg)
+![Semantic Release enabled](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](http://mooyoul.mit-license.org/)
 
 Extends Chai with assertions about images
