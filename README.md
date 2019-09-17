@@ -1,7 +1,7 @@
 # chai-image
 
-![Build Status](https://github.com/mooyoul/chai-image/workflows/workflow/badge.svg)
-![Semantic Release enabled](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)
+[![Build Status](https://github.com/mooyoul/chai-image/workflows/workflow/badge.svg)](https://github.com/mooyoul/chai-image/actions)
+[![Semantic Release enabled](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](http://mooyoul.mit-license.org/)
 
@@ -49,6 +49,43 @@ chai.should();
 
 > NOTE: Currently it only supports PNG image format.
 
+##### Example
+
+```typescript
+// Simple Example
+import * as fs from "fs";
+
+const bufActual = fs.readFileSync("actual.png");
+const bufExpected = fs.readFileSync("expected.png");
+
+expect(bufActual).to.matchImage(bufExpected);
+```
+
+```typescript
+// Real-world Example
+import * as sharp from "sharp";
+
+class ImageService {
+  public async transform(buf: Buffer): Promise<Buffer> {
+    return await sharp(buf).resize().max(320, 320).png().toBuffer();
+  }
+}
+
+const service = new ImageService();
+
+describe("ImageService", () => {
+  describe("#transform", () => {
+    it("should transform image", async () => {
+      const input = fs.readFileSync("fixtures/input.png");
+      const output = fs.readFileSync("fixtures/output.png");
+      
+      expect(await service.transform(input)).to.matchImage(output);
+    });
+  });
+});
+
+```
+
 Tests image matches to given image or not.
 
 Image comparision is proceeded by [pixelmatch](https://github.com/mapbox/pixelmatch) library.
@@ -93,7 +130,7 @@ interface OutputOptions {
 
 ## Changelog
 
-
+See [CHANGELOG](/CHANGELOG.md).
 
 ## Testing
 
