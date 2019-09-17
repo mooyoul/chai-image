@@ -1,6 +1,6 @@
 {
   "name": "chai-image",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Extends Chai with assertions about images",
   "main": "index.js",
   "types": "index.d.ts",
