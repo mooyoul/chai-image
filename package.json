@@ -1,0 +1,55 @@
+{
+  "name": "chai-image",
+  "version": "0.0.1",
+  "description": "Extends Chai with assertions about images",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "global.d.ts"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "mocha -r ts-node/register index.spec.ts",
+    "lint": "tslint -c tslint.json index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mooyoul/chai-image.git"
+  },
+  "keywords": [
+    "chai",
+    "image",
+    "pixeldiff",
+    "chai-plugin",
+    "imagediff"
+  ],
+  "author": "MooYeol Prescott Lee <mooyoul@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mooyoul/chai-image/issues"
+  },
+  "homepage": "https://github.com/mooyoul/chai-image#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.3",
+    "@types/mkdirp": "0.5.2",
+    "@types/mocha": "5.2.7",
+    "@types/node": "8.10.54",
+    "@types/pixelmatch": "5.0.0",
+    "@types/pngjs": "3.3.2",
+    "@vingle/tslint-preset": "1.0.0",
+    "chai": "4.2.0",
+    "del": "5.1.0",
+    "mocha": "6.2.0",
+    "ts-node": "8.4.1",
+    "tslint": "5.20.0",
+    "typescript": "3.6.3"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "pixelmatch": "^5.0.2",
+    "pngjs": "^3.4.0"
+  }
+}
