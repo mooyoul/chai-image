@@ -11,9 +11,13 @@ Extends Chai with assertions about images
 expect(bufImage).to.matchImage(bufExpectedImage);
 ```
 
-| Expected | Actual | Diff |
-| --- | --- | --- |
-| ![Expected Image](fixtures/red_velvet_perfect_velvet_all_2_co_m_l.png) | ![Actual Image](fixtures/red_velvet_perfect_velvet_all_2_co_l.png) | ![Diff Image](fixtures/test_diff.png) |
+| Expected | Actual |
+| --- | --- |
+| ![Expected Image](fixtures/red_velvet_perfect_velvet_all_2_co_m_l.png) | ![Actual Image](fixtures/red_velvet_perfect_velvet_all_2_co_l.png)
+
+| Diff (LEFT_TOP Aligned) | Diff (CENTER Aligned)
+| --- | --- |
+| ![Diff Image](fixtures/test_diff_left_top.png) | ![Diff Image](fixtures/test_diff_center.png) |
 
 In this case, `matchImage` assertion will fail.
 
@@ -95,9 +99,17 @@ If output config is provided, `chai-image` will create some files to show diff r
 
 ```typescript
 
+enum Align {
+  LEFT_TOP = "leftTop",
+  CENTER = "center",
+}
+
 interface MatchImageOptions {
   // Custom diff config passed to pixelmatch
   diff?: DiffOptions;
+  
+  // Image aligning config for aligning different size image (default: Align.LEFT_TOP)
+  align?: Align;
   
   // Output config
   // if specified, chai-image will create output files to visualize diff 

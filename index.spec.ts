@@ -2,7 +2,7 @@ import { AssertionError, expect, use as useChaiPlugin } from "chai";
 import * as del from "del";
 import * as fs from "fs";
 
-import { chaiImage, OutputOptions } from "./index";
+import { Align, chaiImage, OutputOptions } from "./index";
 
 useChaiPlugin(chaiImage);
 
@@ -108,6 +108,39 @@ describe("chai-image", () => {
           );
         }).to.throw(AssertionError)
           .with.property("message", "expected image not to match given image, but none was different");
+      });
+    });
+
+    context("when actual image matches to expected image with align", () => {
+      it("should not throw AssertionError", () => {
+        expect(() => {
+          expect(
+            fs.readFileSync("fixtures/red_velvet_perfect_velvet_all_2_co_l.png"),
+          ).to.matchImage(
+            fs.readFileSync("fixtures/red_velvet_perfect_velvet_all_2_co_m_l.png"), {
+              diff: {
+                threshold: 0.95,
+              },
+              align: Align.CENTER,
+            },
+          );
+        }).to.not.throw(AssertionError);
+      });
+
+      it("should throw AssertionError if negated", () => {
+        expect(() => {
+          expect(
+            fs.readFileSync("fixtures/red_velvet_perfect_velvet_all_2_co_l.png"),
+          ).to.not.matchImage(
+            fs.readFileSync("fixtures/red_velvet_perfect_velvet_all_2_co_m_l.png"), {
+              diff: {
+                threshold: 0.95,
+              },
+              align: Align.CENTER,
+            },
+          );
+        }).to.throw(AssertionError)
+        .with.property("message", "expected image not to match given image, but none was different");
       });
     });
 

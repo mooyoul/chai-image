@@ -8,6 +8,11 @@ import * as path from "path";
 import pixelmatch = require("pixelmatch"); // tslint:disable-line
 import { PNG } from "pngjs";
 
+export enum Align {
+  LEFT_TOP = "leftTop",
+  CENTER = "center",
+}
+
 export interface DiffOptions {
   threshold?: number;
   includeAA?: boolean;
@@ -26,6 +31,7 @@ export interface OutputOptions {
 
 export interface MatchImageOptions {
   diff?: DiffOptions;
+  align?: Align;
   output?: OutputOptions;
 }
 
@@ -42,7 +48,7 @@ export const chaiImage: Chai.ChaiPlugin = (chai: Chai.ChaiStatic, utils: Chai.Ch
 
     const [ imgExpected, imgActual ] = (() => {
       try {
-        return loadImages(actual as Buffer, expected as Buffer);
+        return loadImages(actual as Buffer, expected as Buffer, options.align);
       } catch (e) {
         if (/invalid/i.test(e.message)) {
           throw new chai.AssertionError("image must be a valid PNG image");
@@ -79,7 +85,7 @@ export const chaiImage: Chai.ChaiPlugin = (chai: Chai.ChaiStatic, utils: Chai.Ch
 };
 
 // Load images, and perform pre-processing if needed
-function loadImages(bufActual: Buffer, bufExpected: Buffer) {
+function loadImages(bufActual: Buffer, bufExpected: Buffer, align: Align = Align.LEFT_TOP) {
   // Load image pixels first
   const rawExpected = PNG.sync.read(bufExpected);
   const rawActual = PNG.sync.read(bufActual);
@@ -100,8 +106,14 @@ function loadImages(bufActual: Buffer, bufExpected: Buffer) {
     // Create a new empty PNG image to generate resized image output
     const resized = new PNG({ width, height, fill: true });
 
+    // Compute image position to align
+    const [ deltaX, deltaY ] = align === Align.CENTER ? [
+      Math.floor((width - source.width) / 2),
+      Math.floor((height - source.height) / 2),
+    ] : [0, 0];
+
     // Copy source pixel data into created PNG image
-    PNG.bitblt(source, resized, 0, 0, source.width, source.height, 0, 0);
+    PNG.bitblt(source, resized, 0, 0, source.width, source.height, deltaX, deltaY);
 
     // Fill non-source area (background)
     for (let y = 0; y < height; y++) {
