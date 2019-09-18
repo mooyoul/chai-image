@@ -11,6 +11,9 @@ Extends Chai with assertions about images
 expect(bufImage).to.matchImage(bufExpectedImage);
 ```
 
+
+![Example](example.png)
+
 | Expected | Actual |
 | --- | --- |
 | ![Expected Image](fixtures/red_velvet_perfect_velvet_all_2_co_m_l.png) | ![Actual Image](fixtures/red_velvet_perfect_velvet_all_2_co_l.png)
