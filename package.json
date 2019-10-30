@@ -36,7 +36,7 @@
     "@types/chai": "4.2.4",
     "@types/mkdirp": "0.5.2",
     "@types/mocha": "5.2.7",
-    "@types/node": "8.10.56",
+    "@types/node": "8.10.57",
     "@types/pixelmatch": "5.0.0",
     "@types/pngjs": "3.3.2",
     "@vingle/commitlint-preset": "1.0.3",
