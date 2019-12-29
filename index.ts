@@ -149,7 +149,7 @@ function saveImages(passed: boolean, imgActual: PNG, imgExpected: PNG, imgDiff: 
 
     if (!diffOnly) {
       fs.writeFileSync(path.join(dir, `${name}_actual.png`), PNG.sync.write(imgActual, { filterType: 4 }));
-      fs.writeFileSync(path.join(dir, `${name}_expected.png`), PNG.sync.write(imgActual, { filterType: 4 }));
+      fs.writeFileSync(path.join(dir, `${name}_expected.png`), PNG.sync.write(imgExpected, { filterType: 4 }));
     }
 
     fs.writeFileSync(path.join(dir, `${name}_diff.png`), PNG.sync.write(imgDiff, { filterType: 4 }));
