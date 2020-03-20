@@ -41,7 +41,7 @@
     "@types/pngjs": "3.4.1",
     "@vingle/commitlint-preset": "1.0.3",
     "@vingle/semantic-release-config": "1.0.5",
-    "@vingle/tslint-preset": "1.0.0",
+    "@vingle/tslint-preset": "1.0.1",
     "chai": "4.2.0",
     "del": "5.1.0",
     "husky": "4.2.3",
