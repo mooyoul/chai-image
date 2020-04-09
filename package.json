@@ -44,7 +44,7 @@
     "@vingle/tslint-preset": "1.0.1",
     "chai": "4.2.0",
     "del": "5.1.0",
-    "husky": "4.2.4",
+    "husky": "4.2.5",
     "mocha": "6.2.3",
     "ts-node": "8.8.2",
     "tslint": "5.20.1",
