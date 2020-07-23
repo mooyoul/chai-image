@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/mooyoul/chai-image#readme",
   "devDependencies": {
-    "@types/chai": "4.2.11",
+    "@types/chai": "4.2.12",
     "@types/mkdirp": "0.5.2",
     "@types/mocha": "5.2.7",
     "@types/node": "8.10.61",
