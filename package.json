@@ -34,7 +34,7 @@
   "homepage": "https://github.com/mooyoul/chai-image#readme",
   "devDependencies": {
     "@types/chai": "4.2.12",
-    "@types/mkdirp": "0.5.2",
+    "@types/mkdirp": "1.0.1",
     "@types/mocha": "5.2.7",
     "@types/node": "8.10.62",
     "@types/pixelmatch": "5.2.1",
@@ -51,7 +51,7 @@
     "typescript": "3.9.7"
   },
   "dependencies": {
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.0",
     "pixelmatch": "^5.0.2",
     "pngjs": "^3.4.0"
   },
