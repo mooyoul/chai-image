@@ -39,7 +39,7 @@
     "@types/node": "8.10.62",
     "@types/pixelmatch": "5.2.1",
     "@types/pngjs": "3.4.2",
-    "@vingle/commitlint-preset": "1.0.3",
+    "@vingle/commitlint-preset": "2.0.0",
     "@vingle/semantic-release-config": "1.0.5",
     "@vingle/tslint-preset": "1.0.1",
     "chai": "4.2.0",
