@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/mooyoul/chai-image/compare/v1.1.2...v2.0.0) (2020-09-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency pngjs to v5 ([7a70538](https://github.com/mooyoul/chai-image/commit/7a70538c10fefee5d2bf42b7f87f1b8138679f96))
+* **deps:** update dependency pngjs to v5 ([#11](https://github.com/mooyoul/chai-image/issues/11)) ([cfe2043](https://github.com/mooyoul/chai-image/commit/cfe204348855df365bb5ce7b7c98b0365219f026))
+
+
+### BREAKING CHANGES
+
+* **deps:** Drop Node.js 8 support
+
 ## [1.1.2](https://github.com/mooyoul/chai-image/compare/v1.1.1...v1.1.2) (2020-09-01)
 
 
