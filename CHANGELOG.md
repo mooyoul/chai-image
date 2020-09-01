@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/mooyoul/chai-image/compare/v1.1.1...v1.1.2) (2020-09-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency mkdirp to v1 ([#6](https://github.com/mooyoul/chai-image/issues/6)) ([532d49d](https://github.com/mooyoul/chai-image/commit/532d49d76b81fb503772a3d130ae1bf3df00f796))
+
 ## [1.1.1](https://github.com/mooyoul/chai-image/compare/v1.1.0...v1.1.1) (2019-12-29)
 
 
