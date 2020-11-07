@@ -53,7 +53,7 @@
   "dependencies": {
     "mkdirp": "^1.0.0",
     "pixelmatch": "^5.0.2",
-    "pngjs": "^5.0.0"
+    "pngjs": "^6.0.0"
   },
   "config": {
     "commitizen": {
