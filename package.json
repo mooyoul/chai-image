@@ -42,7 +42,7 @@
     "@types/node": "8.10.66",
     "@types/pixelmatch": "5.2.2",
     "@types/pngjs": "3.4.2",
-    "chai": "4.3.0",
+    "chai": "4.3.1",
     "del": "5.1.0",
     "husky": "4.3.8",
     "mocha": "8.3.0",
