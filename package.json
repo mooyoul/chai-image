@@ -36,7 +36,7 @@
     "@prescott/commitlint-preset": "1.0.2",
     "@prescott/semantic-release-config": "1.0.1",
     "@prescott/tslint-preset": "1.0.1",
-    "@types/chai": "4.2.15",
+    "@types/chai": "4.2.16",
     "@types/mkdirp": "1.0.1",
     "@types/mocha": "8.2.2",
     "@types/node": "8.10.66",
