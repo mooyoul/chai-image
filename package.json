@@ -40,7 +40,7 @@
     "@types/mkdirp": "1.0.1",
     "@types/mocha": "8.2.2",
     "@types/node": "8.10.66",
-    "@types/pixelmatch": "5.2.2",
+    "@types/pixelmatch": "5.2.3",
     "@types/pngjs": "3.4.2",
     "chai": "4.3.4",
     "del": "5.1.0",
