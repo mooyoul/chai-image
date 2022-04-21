@@ -38,7 +38,7 @@
     "@prescott/tslint-preset": "1.0.1",
     "@types/chai": "4.3.1",
     "@types/mkdirp": "1.0.2",
-    "@types/mocha": "9.1.0",
+    "@types/mocha": "9.1.1",
     "@types/node": "16.11.27",
     "@types/pixelmatch": "5.2.4",
     "@types/pngjs": "6.0.1",
