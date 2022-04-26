@@ -39,7 +39,7 @@
     "@types/chai": "4.3.1",
     "@types/mkdirp": "1.0.2",
     "@types/mocha": "9.1.1",
-    "@types/node": "16.11.29",
+    "@types/node": "16.11.31",
     "@types/pixelmatch": "5.2.4",
     "@types/pngjs": "6.0.1",
     "chai": "4.3.6",
