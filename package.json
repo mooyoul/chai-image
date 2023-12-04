@@ -43,7 +43,7 @@
     "@types/pixelmatch": "5.2.4",
     "@types/pngjs": "6.0.1",
     "chai": "4.3.7",
-    "del": "6.1.1",
+    "del": "7.1.0",
     "husky": "8.0.3",
     "mocha": "10.2.0",
     "ts-node": "10.9.1",
