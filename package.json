@@ -51,7 +51,7 @@
     "typescript": "5.1.6"
   },
   "dependencies": {
-    "mkdirp": "^1.0.0",
+    "mkdirp": "^3.0.0",
     "pixelmatch": "^5.0.2",
     "pngjs": "^6.0.0"
   },
