@@ -34,7 +34,7 @@
   "homepage": "https://github.com/mooyoul/chai-image#readme",
   "devDependencies": {
     "@prescott/commitlint-preset": "1.0.9",
-    "@prescott/semantic-release-config": "1.0.1",
+    "@prescott/semantic-release-config": "1.0.15",
     "@prescott/tslint-preset": "1.0.1",
     "@types/chai": "4.3.5",
     "@types/mkdirp": "1.0.2",
