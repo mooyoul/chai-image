@@ -20,6 +20,10 @@ export interface DiffOptions {
   aaColor?: [number, number, number];
   /* The color of differing pixels in the diff output. [255, 0, 0] by default. */
   diffColor?: [number, number, number];
+
+  // Matching amount percentage of pixel, ranges from 0 to 1.
+  // Percentage of pixels which must match to validate the test, 1 by default
+  matchingRate?: number;
 }
 
 export interface OutputOptions {
@@ -65,10 +69,13 @@ export const chaiImage: Chai.ChaiPlugin = (chai: Chai.ChaiStatic, utils: Chai.Ch
     if (actualHash !== expectedHash) {
       // if hash is different, perform imagediff
       const { width, height } = imgExpected;
+      const size = width * height;
+      const mustMatch = size * (options.diff?.matchingRate ?? 1);
+
       const imgDiff = new PNG({ width, height });
 
       const diffPixelCount = pixelmatch(imgActual.data, imgExpected.data, imgDiff.data, width, height, options.diff);
-      const passed = diffPixelCount === 0;
+      const passed = diffPixelCount <= (size - mustMatch);
 
       if (options.output) {
         saveImages(passed, imgActual, imgExpected, imgDiff, options.output);

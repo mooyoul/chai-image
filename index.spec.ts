@@ -142,6 +142,38 @@ describe("chai-image", () => {
         }).to.throw(AssertionError)
         .with.property("message", "expected image not to match given image, but none was different");
       });
+
+    context("when matchingRate is specified", () => {
+      it("should not throw AssertionError is rate is not reach", () => {
+        expect(() => {
+          expect(
+            fs.readFileSync("fixtures/red_velvet_perfect_velvet_all_2_co_l.png"),
+          ).to.matchImage(
+            fs.readFileSync("fixtures/red_velvet_perfect_velvet_all_2_co_m_l.png"),
+            {
+              diff: {
+                matchingRate: 1 - (202176 / (720 * 600)) // Allow 202176 to fail
+              }
+            }
+          );
+        }).to.not.throw(AssertionError)
+      });
+
+      it("should throw AssertionError is rate is reach", () => {
+        expect(() => {
+          expect(
+            fs.readFileSync("fixtures/red_velvet_perfect_velvet_all_2_co_l.png"),
+          ).to.matchImage(
+            fs.readFileSync("fixtures/red_velvet_perfect_velvet_all_2_co_m_l.png"),
+            {
+              diff: {
+                matchingRate: 1 - (202174 / (720 * 600)) // Allow 202174 to fail
+              }
+            }
+          );
+        }).to.throw(AssertionError)
+      });
+    })
     });
 
     describe("for output creation", () => {
